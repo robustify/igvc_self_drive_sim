@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+    <arg name="gui" value="false" />
+  </include>
+
+  <test pkg="igvc_self_drive_gazebo_plugins" type="gazebo_tests.py" test-name="gazebo_tests" time-limit="15.0" />
+
+</launch>

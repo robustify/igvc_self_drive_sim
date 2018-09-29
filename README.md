@@ -17,7 +17,17 @@ Spawn the GEM model in Gazebo with `spawn_gem.launch` in the `igvc_self_drive_ga
 
 `roslaunch igvc_self_drive_gazebo spawn_gem.launch`
 
-### Simulating Specific IGVC Tasks
+The `spawn_gem.launch` file has arguments that allow the user to control some aspects of the spawned GEM:
+
+* `start_x`, `start_y`, `start_z`: The `x`, `y`, `z` position of the vehicle in Gazebo
+
+* `start_yaw`: The direction the vehicle faces relative to the Gazebo world frame
+
+* `twist_mode`: If true, the GEM subscribes to a `geometry_msgs/Twist` topic to move around the world. If false, it subscribes to individual actuator command topics. See the discussion of these modes below.
+
+* `pub_tf`: If true, a ground truth TF transform from `world` frame to `base_footprint` frame is published
+
+### Simulating IGVC Tasks
 
 The `self_drive_tasks.world` file in the `igvc_self_drive_gazebo` package simulates the specific tasks as described in the official rules document, which can be found [[here](http://www.igvc.org/2018selfdriverules.pdf)].
 
@@ -25,7 +35,7 @@ To load the world and spawn the vehicle at the starting point for a particular t
 
 `roslaunch igvc_self_drive_gazebo f3_gazebo.launch`
 
-At the moment, the F9 task is not implemented in the `self_drive_tasks.world` Gazebo world, even though the lauch file for it exists.
+At the moment, the F9 task is not implemented in the `self_drive_tasks.world` Gazebo world, even though the launch file for it exists.
 
 ### Sensor Data Topics
 The following topics are published by Gazebo:
@@ -47,7 +57,7 @@ The following topics are published by Gazebo:
 ### Controlling the Simulated Vehicle
 The Gazebo GEM model can be controlled in two different modes:
 
-* **Twist Mode:** Send a `geometry_msgs/Twist` message on the `/cmd_vel` topic with desired speed and yaw rate, and let the simulation generate thet appropriate actuator commands.
+* **Twist Mode:** Send a `geometry_msgs/Twist` message on the `/cmd_vel` topic with desired speed and yaw rate, and let the simulation generate the appropriate actuator commands.
 
 * **Actuator Mode:** Send throttle, brake, steering, and gear actuator commands directly to the simulator.
 

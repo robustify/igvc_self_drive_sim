@@ -2,6 +2,9 @@
 Changelog for package igvc_self_drive_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.1 (2018-10-06)
 ------------------
 

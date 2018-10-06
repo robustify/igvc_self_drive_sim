@@ -2,6 +2,9 @@
 Changelog for package igvc_self_drive_sim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.1 (2018-10-06)
 ------------------
 

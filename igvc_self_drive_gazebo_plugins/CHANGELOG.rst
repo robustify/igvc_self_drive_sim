@@ -2,8 +2,8 @@
 Changelog for package igvc_self_drive_gazebo_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.2 (2018-10-06)
+------------------
 * Adjusted rostest timeouts for pre-release tests
 * Contributors: Micho Radovnikovich
 

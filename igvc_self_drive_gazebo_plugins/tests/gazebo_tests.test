@@ -5,6 +5,6 @@
 
   <node pkg="gazebo_ros" type="gzserver" name="gazebo" output="screen" args="--verbose -e ode worlds/empty.world" />
 
-  <test pkg="igvc_self_drive_gazebo_plugins" type="gazebo_tests.py" test-name="gazebo_tests" time-limit="90.0" />
+  <test pkg="igvc_self_drive_gazebo_plugins" type="gazebo_tests.py" test-name="gazebo_tests" time-limit="600.0" />
 
 </launch>

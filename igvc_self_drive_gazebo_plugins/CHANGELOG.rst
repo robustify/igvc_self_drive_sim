@@ -2,6 +2,11 @@
 Changelog for package igvc_self_drive_gazebo_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Restructured tests to avoid deleting Gazebo model
+* Contributors: Micho Radovnikovich
+
 0.1.3 (2018-10-06)
 ------------------
 * Changed Gazebo connection event type to sync camera with physics updates

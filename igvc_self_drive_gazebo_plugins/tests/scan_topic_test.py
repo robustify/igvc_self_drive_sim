@@ -19,12 +19,11 @@ class ScanTopicTest(unittest.TestCase):
         self.sub_scan.unregister()
 
         if self.delete_model:
-            model_name = 'vehicle'
             delete_srv = rospy.ServiceProxy('/gazebo/delete_model', DeleteModel)
 
             try:
                 delete_srv.wait_for_service(1.0)
-                delete_srv(model_name=model_name)
+                delete_srv(model_name='vehicle')
             except rospy.ServiceException as e:  # service call failed
                 rospy.logerr(str(e))
             except rospy.ROSInterruptException as e:  # ROS shutdown during timeout

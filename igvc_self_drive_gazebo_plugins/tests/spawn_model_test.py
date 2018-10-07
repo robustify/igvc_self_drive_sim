@@ -13,9 +13,9 @@ from cStringIO import StringIO
 
 
 class SpawnModelTest(unittest.TestCase):
-    def __init__(self, pub_tf, twist_mode, leave_spawned):
+    def __init__(self, model_name, pub_tf, twist_mode, leave_spawned):
         super(SpawnModelTest, self).__init__('spawnModelTest')
-        self.model_name = 'vehicle'
+        self.model_name = model_name
         self.model_xml = ''
         self.pub_tf = pub_tf
         self.twist_mode = twist_mode
@@ -31,7 +31,7 @@ class SpawnModelTest(unittest.TestCase):
             delete_srv = rospy.ServiceProxy('/gazebo/delete_model', DeleteModel)
             try:
                 delete_srv.wait_for_service(1.0)
-                delete_srv.call(model_name=self.model_name)
+                delete_srv.call(model_name=str(self.model_name))
             except rospy.ServiceException as e:  # service call failed
                 rospy.logerr(str(e))
             except rospy.ROSInterruptException as e:  # ROS shutdown during timeout

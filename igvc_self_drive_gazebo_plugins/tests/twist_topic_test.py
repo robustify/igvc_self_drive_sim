@@ -25,12 +25,12 @@ class TwistTopicTest(unittest.TestCase):
             try:
                 delete_srv.wait_for_service(1.0)
                 delete_srv(model_name=model_name)
-            except rospy.ServiceException:  # service call failed
-                pass
-            except rospy.ROSInterruptException:  # ROS shutdown during timeout
-                pass
-            except rospy.ROSException:  # timeout expired
-                pass
+            except rospy.ServiceException as e:  # service call failed
+                rospy.logerr(str(e))
+            except rospy.ROSInterruptException as e:  # ROS shutdown during timeout
+                rospy.logerr(str(e))
+            except rospy.ROSException as e:  # timeout expired
+                rospy.logerr(str(e))
 
     def twistTopicTest(self):
 

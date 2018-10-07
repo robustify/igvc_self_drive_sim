@@ -26,7 +26,7 @@ void GazeboCamControl::reconfig(igvc_self_drive_gazebo_plugins::GazeboCamConfig&
 
 void GazeboCamControl::Init()
 {
-  connections_.push_back(event::Events::ConnectPreRender(boost::bind(&GazeboCamControl::Update, this)));
+  connections_.push_back(event::Events::ConnectRender(boost::bind(&GazeboCamControl::Update, this)));
 }
 
 void GazeboCamControl::Reset()

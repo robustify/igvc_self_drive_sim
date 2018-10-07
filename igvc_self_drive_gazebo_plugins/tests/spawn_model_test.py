@@ -31,13 +31,13 @@ class SpawnModelTest(unittest.TestCase):
             delete_srv = rospy.ServiceProxy('/gazebo/delete_model', DeleteModel)
             try:
                 delete_srv.wait_for_service(1.0)
-                delete_srv(model_name=self.model_name)
-            except rospy.ServiceException:  # service call failed
-                pass
-            except rospy.ROSInterruptException:  # ROS shutdown during timeout
-                pass
-            except rospy.ROSException:  # timeout expired
-                pass
+                delete_srv.call(model_name=self.model_name)
+            except rospy.ServiceException as e:  # service call failed
+                rospy.logerr(str(e))
+            except rospy.ROSInterruptException as e:  # ROS shutdown during timeout
+                rospy.logerr(str(e))
+            except rospy.ROSException as e:  # timeout expired
+                rospy.logerr(str(e))
 
     def spawnModelTest(self):
         results = self.__callSpawnService(self.model_xml)
@@ -59,10 +59,11 @@ class SpawnModelTest(unittest.TestCase):
             try:
                 self.tf_listener.lookupTransform(child_frame, parent_frame, rospy.Time(0))
                 success = True
-                break
             except LookupException:
                 pass
 
+            if success:
+                break
             rospy.sleep(0.01)
         return success
 

@@ -2,6 +2,9 @@
 Changelog for package igvc_self_drive_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.2 (2018-10-06)
 ------------------
 * roslaunch test depend for igvc_self_drive_gazebo

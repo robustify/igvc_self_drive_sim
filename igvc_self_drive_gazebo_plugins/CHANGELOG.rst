@@ -2,8 +2,8 @@
 Changelog for package igvc_self_drive_gazebo_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.4 (2018-10-06)
+------------------
 * Restructured tests to avoid deleting Gazebo model
 * Contributors: Micho Radovnikovich
 

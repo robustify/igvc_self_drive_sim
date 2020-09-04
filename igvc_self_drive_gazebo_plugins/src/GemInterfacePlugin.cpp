@@ -20,12 +20,12 @@ void GemInterfacePlugin::Load(physics::ModelPtr model, sdf::ElementPtr sdf)
   ROS_INFO("Loading GEM interface plugin");
 
   // Gazebo initialization
-  steer_fl_joint_ = model->GetJoint("steer_fl");
-  steer_fr_joint_ = model->GetJoint("steer_fr");
-  wheel_rl_joint_ = model->GetJoint("wheel_rl");
-  wheel_rr_joint_ = model->GetJoint("wheel_rr");
-  wheel_fl_joint_ = model->GetJoint("wheel_fl");
-  wheel_fr_joint_ = model->GetJoint("wheel_fr");
+  steer_fl_joint_ = model->GetJoint("steer_fl_joint");
+  steer_fr_joint_ = model->GetJoint("steer_fr_joint");
+  wheel_rl_joint_ = model->GetJoint("wheel_rl_joint");
+  wheel_rr_joint_ = model->GetJoint("wheel_rr_joint");
+  wheel_fl_joint_ = model->GetJoint("wheel_fl_joint");
+  wheel_fr_joint_ = model->GetJoint("wheel_fr_joint");
   model_ = model;
   footprint_link_ = model->GetLink("base_footprint");
 

@@ -1,6 +1,9 @@
 sudo: required
 dist: trusty
 language: generic
+branches:
+  except:
+  - noetic-devel
 env:
   global:
     - ROS_PARALLEL_TEST_JOBS=-j1

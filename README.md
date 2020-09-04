@@ -1,7 +1,9 @@
 # IGVC Self-Drive Gazebo Simulator
 This repository provides a Gazebo model of a Polaris GEM, as well as worlds and models to simulate the tasks of the competition.
 
-After cloning into a ROS workspace, run the following the command from the root of the workspace to install the necessary ROS package dependencies to make everything work correctly:
+**If using ROS Noetic**, you need to clone the [hector_models](https://github.com/tu-darmstadt-ros-pkg/hector_models.git) and [hector_gazebo](https://github.com/tu-darmstadt-ros-pkg/hector_gazebo.git) repositories into the same workspace as this repositoriy.
+
+After cloning into a ROS workspace along with `hector_gazebo` and `hector_models` if necessary, run the following the command from the root of the workspace to install additional ROS package dependencies to make everything work correctly:
 
 `rosdep install --from-paths src --ignore-src -r`
 
